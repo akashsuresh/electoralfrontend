@@ -28,7 +28,6 @@
   <!-- d3 & c3 js -->
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.min.js"></script>
-
   <!-- NiceScroll -->
   <script src="components/jquery-nicescroll/jquery.nicescroll.min.js"></script>
   <script>
@@ -73,11 +72,13 @@
   <script src="services/services.js"></script>
   <script src="directives/c3-angular.js"></script>
 
+
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini" data-ng-controller="ElectoralController">
+<div class="mobile_msg"><p>This application is only optimized to be viewed on Tablets and other devices with larger screen size.</p></div>
 <div class="wrapper">
 
   <header class="main-header">
@@ -86,27 +87,24 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><img src="dist/img/SampleLogo.png" style="width:100%; height:50px"></span>
+      <span class="logo-lg"><img src="dist/img/demo-logo.png"></span>
     </a>
+    <div class="filter_back">
+      <a href="#"><i class="fa fa-caret-left"></i></a>
+    </div>
+
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Navbar Left Menu -->
       <div class="menu_left">
       <span class="map_of_india">
-      	<i class="fa fa-arrow-left"></i>
-      </span>
-        <span class="map_of_india">
       <select class="dropdown">
-  		  <option ng-bind="name"></option>
-          <option>Delhi</option>
-          <option>Mumbai</option>
+  		   <option ng-bind="name"></option>
 	  </select>
       </span>
         <span class="map_of_india">
       <select class="dropdown">
-  		  <option ng-bind="showing"></option>
-          <option>MC's</option>
-          <option>DC's</option>
+  		   <option ng-bind="showing"></option>
 	  </select>
       </span>
         <span class="map_of_india">
@@ -119,7 +117,7 @@
         <span class="map_of_india">
       <div class="box-tools pull-right">
       	<div class="has-feedback">
-         	<input type="text" class="form-control input-sm" placeholder="India">
+         	<input type="text" class="form-control input-sm2" placeholder="India">
             <span class="glyphicon glyphicon-search form-control-feedback"></span>
         </div>
       </div>
@@ -132,7 +130,7 @@
           <!-- Notifications: style can be found in dropdown.less -->
           <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
+              <i class="fa fa-bell"></i>
               <span class="label label-warning">10</span>
             </a>
             <ul class="dropdown-menu">
@@ -174,8 +172,8 @@
           <!-- Notess: style can be found in dropdown.less -->
           <li class="dropdown tasks-menu">
             <a href="#" data-toggle="modal" data-target="#modal-info5">
-              <i class="fa fa-file-text-o"></i>
-              <span class="label label-danger">9</span>
+              <i class="fa fa-file-text"></i>
+              <span class="label label-success">9</span>
             </a>
           </li>
 
@@ -236,10 +234,10 @@
         <i class="fa fa-bars" aria-hidden="true"></i>
       </a>
     </div>
-  </div>
+  </div><!------Subheader-------->
   <div class="modal modal-info fade" id="modal-info3">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content filter-bg">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span></button>
@@ -297,7 +295,7 @@
               <div class="box_filter_header">
                 <h3 class="title">Segmentation</h3>
               </div>
-              <div class="filter_range">
+              <div class="filter_range segment">
                 <div class="col-md-12 no-padding">
                   <div class="filter_title2">Segmentation</div>
                 </div>
@@ -316,7 +314,7 @@
                   </div>
                 </div>
               </div>
-              <div class="filter_range">
+              <div class="filter_range segment">
                 <div class="col-md-12 no-padding">
                   <div class="filter_title2">Segmentation</div>
                 </div>
@@ -344,7 +342,7 @@
               </div>
               <div class="filter_range">
                 <div class="col-md-3 no-padding">
-                  <div class="filter_title">Party</div>
+                  <div class="filter_title3">Party</div>
                 </div>
                 <div class="col-md-9 no-padding">
                   <div class="filter_select">
@@ -402,7 +400,7 @@
             </div>
           </div>
           <div class="filter_button">
-            <button type="button" class="btn btn-block btn-primary">
+            <button type="button" class="btn btn-block btn-primary ">
               <span>Add Filter</span>  <i class="fa fa-plus"></i>
             </button>
           </div>
@@ -442,8 +440,7 @@
                       <div class="pad">
                         <!-- Map will be created here -->
                         <div id="world-map-markers">
-                         <ng-map center="[20.59, 78.96]"></ng-map>
-
+                          <img src="dist/img/map-colour.png" style="max-height:530px">
                         </div>
                       </div>
                     </div>
@@ -551,8 +548,475 @@
           <!-- /.box -->
         </div>    <!-- /.col-md-8 -->
         <!---Right Sidebar-->
-        <!---<a href="#!/pc">Go Home</a> -->
-        <div ng-view=""></div>
+        <div class="col-md-4 padding2 right_scroll" >
+          <div class="box right_box">
+            <a class="" data-widget="collapse">
+              <div class="box-header with-border">
+                <h3 class="box-title title_margin">Seat Analysis</h3>
+                <div class="box-tools pull-right">
+                  <i class="fa fa-caret-up"></i>
+                </div>
+              </div>
+            </a>
+            <a href="#" data-toggle="modal" data-target="#modal-info" class="btn-expand2">
+              <i class="expand_img" aria-hidden="true"></i>
+            </a>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="item active">
+                        <div class="carousel-caption2">
+                          2014
+                        </div>
+                        <div class="chart2"></div>
+                        <script>
+                            var chart = c3.generate({
+                                bindto: d3.select('.chart2'),
+                                size: {
+                                    height: 140
+                                },
+                                bar: {
+                                    width: 20
+                                },
+                                padding: {
+                                    left: 60
+                                },
+                                color: {
+                                    pattern: ['#5A848D', '#CB8F51', '#B84D4D', '#CCCCCC']
+                                },
+                                data: {
+                                    x: 'x',
+                                    columns:
+                                        [
+                                            ['x', 'Cong', 'BJP', 'TDP', 'Others'],
+                                            ['value', 125, 205, 67, 72]
+                                        ],
+
+                                    type: 'bar',
+                                    labels: true,
+                                    color: function(inColor, data) {
+                                        var colors = ['#5A848D', '#CB8F51', '#B84D4D', '#CCCCCC'];
+                                        if(data.index !== undefined) {
+                                            return colors[data.index];
+                                        }
+                                        return inColor;
+                                    }
+                                },
+
+                                axis: {
+                                    rotated: true,
+                                    x: {
+                                        type: 'category'
+                                    }
+                                },
+                                tooltip: {
+                                    grouped: false,
+                                },
+                                legend: {
+                                    show: false,
+                                }
+                            });
+                        </script>
+
+
+                      </div>
+                      <div class="item">
+                        <div class="carousel-caption2">
+                          2013
+                        </div>
+                        <div class="chart6"></div>
+                        <script>
+                            var chart = c3.generate({
+                                bindto: d3.select('.chart6'),
+                                size: {
+                                    height: 140
+                                },
+                                bar: {
+                                    width: 20
+                                },
+                                padding: {
+                                    left: 60
+                                },
+                                color: {
+                                    pattern: ['#5A848D', '#CB8F51', '#B84D4D', '#CCCCCC']
+                                },
+                                data: {
+                                    x: 'x',
+                                    columns:
+                                        [
+                                            ['x', 'Cong', 'BJP', 'TDP', 'Others'],
+                                            ['value', 125, 205, 67, 72]
+                                        ],
+
+                                    type: 'bar',
+                                    labels: true,
+                                    color: function(inColor, data) {
+                                        var colors = ['#5A848D', '#CB8F51', '#B84D4D', '#CCCCCC'];
+                                        if(data.index !== undefined) {
+                                            return colors[data.index];
+                                        }
+                                        return inColor;
+                                    }
+                                },
+
+                                axis: {
+                                    rotated: true,
+                                    x: {
+                                        type: 'category'
+                                    }
+                                },
+                                tooltip: {
+                                    grouped: false,
+                                },
+                                legend: {
+                                    show: false,
+                                }
+                            });
+                        </script>
+
+                      </div>
+                      <div class="item">
+                        <div class="carousel-caption2">
+                          2009
+                        </div>
+                        <div class="chart7"></div>
+                        <script>
+                            var chart = c3.generate({
+                                bindto: d3.select('.chart7'),
+                                size: {
+                                    height: 140
+                                },
+                                bar: {
+                                    width: 20
+                                },
+                                padding: {
+                                    left: 60
+                                },
+                                color: {
+                                    pattern: ['#5A848D', '#CB8F51', '#B84D4D', '#CCCCCC']
+                                },
+                                data: {
+                                    x: 'x',
+                                    columns:
+                                        [
+                                            ['x', 'Cong', 'BJP', 'TDP', 'Others'],
+                                            ['value', 125, 205, 67, 72]
+                                        ],
+
+                                    type: 'bar',
+                                    labels: true,
+                                    color: function(inColor, data) {
+                                        var colors = ['#5A848D', '#CB8F51', '#B84D4D', '#CCCCCC'];
+                                        if(data.index !== undefined) {
+                                            return colors[data.index];
+                                        }
+                                        return inColor;
+                                    }
+                                },
+
+                                axis: {
+                                    rotated: true,
+                                    x: {
+                                        type: 'category'
+                                    }
+                                },
+                                tooltip: {
+                                    grouped: false,
+                                },
+                                legend: {
+                                    show: false,
+                                }
+                            });
+                        </script>
+
+                      </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                      <span class="fa fa-angle-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                      <span class="fa fa-angle-right"></span>
+                    </a>
+                  </div>
+                  <!-- ./content-area -->
+
+                </div>
+
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+          <div class="box right_box">
+            <a class="" data-widget="collapse">
+              <div class="box-header with-border">
+                <h3 class="box-title title_margin">Historical</h3>
+                <div class="box-tools pull-right">
+                  <i class="fa fa-caret-up"></i>
+                </div>
+              </div>
+            </a>
+            <a href="#" data-toggle="modal" data-target="#modal-info" class="btn-expand2">
+              <i class="expand_img" aria-hidden="true"></i>
+            </a>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="chart1"></div>
+                  <script>
+                      var chart = c3.generate({
+                          bindto: d3.select('.chart1'),
+                          data: {
+                              xs: {
+                                  'BJP': 'x2',
+                                  'Congress': 'x2',
+                              },
+                              columns: [
+                                  ['x2', 2009, 2010, 2011, 2012, 2013, 2014],
+                                  ['BJP', 30, 40, 33, 25, 22, 43],
+                                  ['Congress', 10, 20, 18, 37, 44, 21]
+                              ],
+                              colors: {
+                                  BJP: '#5487B4',
+                                  Congress: '#B84D4D',
+                              },
+                              axes: {
+                                  BJP: 'y',
+                                  Congress: 'y',
+                              }
+                          },
+                          axis: {
+                              x: {
+                                  label: 'Year'
+                              },
+                              y: {
+                                  label: {
+                                      text: 'Vote %',
+                                      position: 'outer-middle'
+                                  }
+                              },
+                          },
+                          tooltip: {
+                              enabled: true,
+                          },
+                          zoom: {
+                              enabled: true,
+                          },
+                      });
+                  </script>
+                  <!-- ./content-area -->
+
+                </div>
+
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.box-body -->
+            <div class="modal modal-info fade" id="modal-info">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="chart4"></div>
+                    <script>
+                        $('#modal-info').on('shown.bs.modal', function (e) {
+                            var chart = c3.generate({
+                                bindto: d3.select('.chart4'),
+                                data: {
+                                    xs: {
+                                        'BJP': 'x1',
+                                        'Congress': 'x1',
+                                    },
+                                    size:
+                                        {
+                                            width:700,
+                                            height:400,
+                                        },
+                                    columns: [
+                                        ['x1', 2009, 2010, 2011, 2012, 2013, 2014],
+                                        ['BJP', 30, 40, 33, 25, 22, 23],
+                                        ['Congress', 10, 20, 18, 37, 44, 21]
+                                    ],
+                                    colors: {
+                                        BJP: '#084281',
+                                        Congress: '#990000',
+                                    },
+                                    axes: {
+                                        BJP: 'y',
+                                        Congress: 'y',
+                                    }
+                                },
+                                axis: {
+                                    x: {
+                                        label: 'Year'
+                                    },
+                                    y: {
+                                        label: {
+                                            text: 'Vote %',
+                                            position: 'outer-middle'
+                                        }
+                                    },
+                                },
+                                tooltip: {
+                                    enabled: true
+                                },
+                                zoom: {
+                                    enabled: true
+                                },
+                            });
+                        })
+                    </script>
+                  </div>
+                </div>
+                <!-- /.modal-content -->
+              </div>
+              <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+          </div>
+          <!-- /.box -->
+          <div class="box right_box">
+            <a class="" data-widget="collapse">
+              <div class="box-header with-border">
+                <h3 class="box-title">Segmentation</h3>
+                <div class="box-tools pull-right">
+                  <i class="fa fa-caret-up"></i>
+                </div>
+              </div>
+            </a>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div ng-if="datapoints">
+                    <c3chart class="chart" bindto-id="pie-chart" chart-data="datapoints" chart-columns="datacolumns">
+
+                      <chart-pie expand="true"/>
+                    </c3chart>
+                  </div>
+
+                  <!-- ./content-area -->
+                </div>
+
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <div class="box right_box">
+            <div class="box-header">
+              <div class="notes">No Notes</div>
+              <div class="btn-note">
+                <a href="#" data-toggle="modal" data-target="#modal-info4" class="btn btn-primary btn-note2">
+                  <span>Create Note</span>
+                </a>
+              </div>
+            </div>
+            <!-- /.box-header -->
+          </div>
+          <!-- /.box -->
+          <!----Note modal----->
+          <div class="modal modal-info fade" id="modal-info4" data-ng-controller="NoteController">
+            <div class="modal-dialog note-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Horizontal Form -->
+                  <div class="note_box">
+                    <h3 class="box-title2">Create Note</h3>
+                  </div>
+                  <!-- form start -->
+                  <form name="noteform" data-ng-submit="saveNote()" class="form-horizontal">
+                    <div class="form-group">
+                      <label for="inputtitle" class="col-sm-2 control-label">Title</label>
+
+                      <div class="col-sm-10">
+                        <input type="inputtitle" class="form-control input_note" id="inputtitle3" placeholder="Enter title" ng-model="title">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputdescription" class="col-sm-2 control-label">Description</label>
+
+                      <div class="col-sm-10">
+                        <!-- textarea -->
+                        <textarea class="form-control" rows="3" placeholder="Enter description" ng-model="description"></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputfilters" class="col-sm-2 control-label">Filters</label>
+                      <div class="col-sm-10">
+                        <div class="filter">
+                          <div class="filter_box">
+                            <div class="filter_content">Fliter 1</div>
+                            <div class="filter_close">X</div>
+                          </div>
+                          <div class="filter_box">
+                            <div class="filter_content">Fliter 2</div>
+                            <div class="filter_close">X</div>
+                          </div>
+                          <div class="filter_box">
+                            <div class="filter_content">Fliter 3</div>
+                            <div class="filter_close">X</div>
+                          </div>
+                          <div class="filter_box">
+                            <div class="filter_content">Fliter 4</div>
+                            <div class="filter_close">X</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputpriority" class="col-sm-2 control-label" >Priority</label>
+                      <div class="col-sm-10">
+                        <fieldset class="rating">
+                          <input type="radio" id="star5" name="rating" value="5" />
+                          <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                          <input type="radio" id="star4half" name="rating" value="4 and a half" ng-model="priority" />
+                          <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                          <input type="radio" id="star4" name="rating" value="4" ng-model="priority"/>
+                          <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                          <input type="radio" id="star3half" name="rating" value="3 and a half" ng-model="priority"/>
+                          <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                          <input type="radio" id="star3" name="rating" value="3" ng-model="priority"/>
+                          <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                          <input type="radio" id="star2half" name="rating" value="2 and a half"ng-model="priority" />
+                          <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                          <input type="radio" id="star2" name="rating" value="2" ng-model="priority" />
+                          <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                          <input type="radio" id="star1half" name="rating" value="1 and a half" ng-model="priority" />
+                          <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                          <input type="radio" id="star1" name="rating" value="1" ng-model="priority" />
+                          <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                          <input type="radio" id="starhalf" name="rating" value="half" ng-model="priority" />
+                          <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <div class="box-footer">
+                      <button type="submit" class="btn btn-success btn_right btn-small" >Save</button>
+                      <button type="reset" class="btn btn-default pull-right btn-small">Reset</button>
+                    </div>
+                    <!-- /.box-footer -->
+                  </form>
+                </div><!--/.modal-body -->
+              </div><!--/.modal-content -->
+            </div><!--/.modal-dialog-->
+          </div><!--/.modal-->
+        </div>
         <!-- /.col -->
       </div>
       <!-- /.row -->
@@ -563,7 +1027,419 @@
 </div>
 <!-- ./wrapper -->
 <!----Note modal content----->
-
+<div class="modal modal-info fade" id="modal-info5">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title">Notes</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <div class="col-md-12">
+              <div class="col-md-2 no-padding">
+                <div class="form-group">
+                  <select class="form-control select2">
+                    <option selected="selected">PC</option>
+                    <option>AC</option>
+                    <option>DC</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 no-padding">
+                <div class="input-group input-group-sm">
+                  <input type="text" class="form-control form-search" placeholder="Enter text">
+                  <span class="input-group-btn">
+                      			<button type="button" class="btn btn-default">Search</button>
+                    			</span>
+                </div>
+              </div>
+              <table id="example2" class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Date created</th>
+                  <th>Last Seen</th>
+                  <th>Priority</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>UP Employment News</td>
+                  <td>26-05-2017</td>
+                  <td>30-07-2017</td>
+                  <td><fieldset class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                    <input type="radio" id="starhalf" name="rating" value="half" />
+                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                  </fieldset></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-info">View</a></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-danger">Remove</a></td>
+                </tr>
+                <tr>
+                  <td>UP Employment News</td>
+                  <td>26-05-2017</td>
+                  <td>30-07-2017</td>
+                  <td><fieldset class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                    <input type="radio" id="starhalf" name="rating" value="half" />
+                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                  </fieldset></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-info">View</a></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-danger">Remove</a></td>
+                </tr>
+                <tr>
+                  <td>UP Employment News</td>
+                  <td>26-05-2017</td>
+                  <td>30-07-2017</td>
+                  <td><fieldset class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                    <input type="radio" id="starhalf" name="rating" value="half" />
+                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                  </fieldset></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-info">View</a></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-danger">Remove</a></td>
+                </tr>
+                <tr>
+                  <td>UP Employment News</td>
+                  <td>26-05-2017</td>
+                  <td>30-07-2017</td>
+                  <td><fieldset class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                    <input type="radio" id="starhalf" name="rating" value="half" />
+                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                  </fieldset></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-info">View</a></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-danger">Remove</a></td>
+                </tr>
+                <tr>
+                  <td>UP Employment News</td>
+                  <td>26-05-2017</td>
+                  <td>30-07-2017</td>
+                  <td><fieldset class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                    <input type="radio" id="starhalf" name="rating" value="half" />
+                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                  </fieldset></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-info">View</a></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-danger">Remove</a></td>
+                </tr>
+                <tr>
+                  <td>UP Employment News</td>
+                  <td>26-05-2017</td>
+                  <td>30-07-2017</td>
+                  <td><fieldset class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                    <input type="radio" id="starhalf" name="rating" value="half" />
+                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                  </fieldset></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-info">View</a></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-danger">Remove</a></td>
+                </tr>
+                <tr>
+                  <td>UP Employment News</td>
+                  <td>26-05-2017</td>
+                  <td>30-07-2017</td>
+                  <td><fieldset class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                    <input type="radio" id="starhalf" name="rating" value="half" />
+                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                  </fieldset></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-info">View</a></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-danger">Remove</a></td>
+                </tr>
+                <tr>
+                  <td>UP Employment News</td>
+                  <td>26-05-2017</td>
+                  <td>30-07-2017</td>
+                  <td><fieldset class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                    <input type="radio" id="starhalf" name="rating" value="half" />
+                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                  </fieldset></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-info">View</a></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-danger">Remove</a></td>
+                </tr>
+                <tr>
+                  <td>UP Employment News</td>
+                  <td>26-05-2017</td>
+                  <td>30-07-2017</td>
+                  <td><fieldset class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                    <input type="radio" id="starhalf" name="rating" value="half" />
+                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                  </fieldset></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-info">View</a></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-danger">Remove</a></td>
+                </tr>
+                <tr>
+                  <td>UP Employment News</td>
+                  <td>26-05-2017</td>
+                  <td>30-07-2017</td>
+                  <td><fieldset class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                    <input type="radio" id="starhalf" name="rating" value="half" />
+                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                  </fieldset></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-info">View</a></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-danger">Remove</a></td>
+                </tr>
+                <tr>
+                  <td>UP Employment News</td>
+                  <td>26-05-2017</td>
+                  <td>30-07-2017</td>
+                  <td><fieldset class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                    <input type="radio" id="starhalf" name="rating" value="half" />
+                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                  </fieldset></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-info">View</a></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-danger">Remove</a></td>
+                </tr>
+                <tr>
+                  <td>UP Employment News</td>
+                  <td>20-05-2017</td>
+                  <td>24-07-2017</td>
+                  <td>
+                    <fieldset class="rating">
+                      <input type="radio" id="star5" name="rating" value="5" />
+                      <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                      <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                      <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                      <input type="radio" id="star4" name="rating" value="4" />
+                      <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                      <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                      <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                      <input type="radio" id="star3" name="rating" value="3" />
+                      <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                      <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                      <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                      <input type="radio" id="star2" name="rating" value="2" />
+                      <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                      <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                      <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                      <input type="radio" id="star1" name="rating" value="1" />
+                      <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                      <input type="radio" id="starhalf" name="rating" value="half" />
+                      <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                    </fieldset>
+                  </td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-info">View</a></td>
+                  <td class="btn-center"><a href="index3.html" class="btn btn-danger">Remove</a></td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Title</th>
+                  <th>Date Created</th>
+                  <th>Last Seen</th>
+                  <th>Priority</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div><!--/.modal-body -->
+    </div><!--/.modal-content -->
+  </div><!--/.modal-dialog-->
+</div><!--/.modal-->
 
 <!-- Bootstrap 3.3.7 -->
 <script src="components/bootstrap/dist/js/bootstrap.min.js"></script>

@@ -43,5 +43,26 @@
 
     electoralApp.controller('ElectoralController',ElectoralController);
 
+    function NoteController($scope,$http,electoralProvider){
+        $scope.saveNote = function() {
+            if ($scope.noteform.$valid) {
+                var noteData = {
+                    "mapof": "Bikaner",
+                    "election": "2014GE",
+                    "showing": "PCs",
+                    "notetitle": $scope.title,
+                    "notedesc": $scope.description,
+                    "notepriority": $scope.priority
+                };
+                //$http.post("http://localhost:3000/api/v1/note_mapping", noteData);
+                electoralProvider.postNotes(noteData);
+            }
+            else
+                console.log('Error');
+        }
+        }
+
+    electoralApp.controller('NoteController',NoteController);
+
 
 })();
